@@ -1,0 +1,68 @@
+<div class="container" style="min-height: 500px">
+
+  <div class="row">
+
+<div class="col-sm-12 text-center">
+
+  <h3>{{msg}}====External json data using get API</h3>
+
+
+
+</div>
+
+
+  </div>
+
+  <div class="row">
+
+<div class="col-sm-4">
+<input type="text" class="form-control input-sm" placeholder="Enter Search keyword" [(ngModel)]="skeyword">
+
+
+</div>
+
+<div class="col-sm-8 text-center">
+<!---pagination start -->
+
+<pagination-controls (pageChange)=" p=$event "></pagination-controls>
+
+<!---pagination end -->
+</div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 form-group" *ngFor="let car of allcar | filter:skeyword | paginate:{itemsPerPage:6,currentPage:p}">
+<div class="row">
+  <div class="col-sm-6">
+    <img src="http://cybotrix.com/ios/img/{{car.image}}" class="img-responsive" style="height: 100px">
+  </div>
+  <div class="col-sm-6">
+
+    <p>Model : {{car.model}}</p>
+    <p>Price : {{car.price}}</p>
+    <p>Fuele : {{car.fuelType}}</p>
+  </div>
+
+
+</div>
+
+
+    </div> 
+
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-sm-12 text-center">
+
+<!---pagination start -->
+
+<pagination-controls (pageChange)=" p=$event "></pagination-controls>
+
+<!---pagination end -->
+
+    </div>
+  </div>
+
+</div>

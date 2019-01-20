@@ -1,0 +1,144 @@
+<div class="container">
+
+<div class="row">
+
+<div class="col-sm-12 text-center">
+
+<h3>Array Manupulation</h3>
+
+<p class="text-center">{{msg}}</p>
+
+</div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-4"> 
+
+    <h4 class="text-center">1D array</h4>
+    <div class="col-sm-8">
+        <label>Item Name</label>
+        <input type="text" class="form-control input-sm" #newitem>
+
+    </div>
+    <div class="col-sm-4">
+        <br>
+        <button class="btn btn-success btn-sm" (click)="saveitem(newitem.value)" >Save Item</button>
+      
+      </div>
+    
+
+<br><br><br><br>
+
+<table class="table table-bordered">
+
+<tr>
+
+<th>Item Name</th>
+<th>Action</th>
+
+</tr>
+
+<tr *ngFor="let i of item; let j = index;">
+
+  <td>{{i}}</td>
+  <td class="text-center">
+     <button class="btn btn-danger btn-sm" (click)="delitem(j)" >Delete</button>
+  </td>
+</tr>
+
+</table>
+
+  </div>
+
+  <div class="col-sm-8">
+  <h4 class="text-center">Multi -D Array</h4> 
+  
+
+<div class="row form-group">
+
+<div class="col-sm-3">
+<label>Item Name</label>
+<input type="text" class="form-control input-sm" #name>
+
+</div>
+
+<div class="col-sm-3">
+    <label>Item Price</label>
+    <input type="number" class="form-control input-sm" #price>
+    
+    </div>
+
+    <div class="col-sm-3">
+        <label>Item Qty</label>
+        <input type="number" class="form-control input-sm" #qty>
+        
+        </div>
+
+        <div class="col-sm-3">
+            <br>
+            <button class="btn btn-primary btn-sm" (click)="saveitem2(name.value,price.value,qty.value)">Save</button>
+            
+            </div>   
+
+
+</div>
+
+
+  <table class="table table-bordered">
+
+    <tr>
+<th>Item Nmae</th>
+<th>Price</th>
+<th>Qty</th>
+<th>Total</th>
+<th>Action</th>
+    </tr>
+
+    <tr *ngFor="let row of item2; let i=index;">
+
+      <td>{{row.name}}</td>
+      <td>{{row.price}}</td>
+      <td>{{row.qty}}</td>
+      <td>{{row.qty * row.price}}</td>
+      <td class="text-center">
+<button class="btn btn-danger btn-sm" (click)="delitem2(i)">Delete</button>
+      </td>
+    </tr>
+
+  </table>
+
+  </div>
+
+</div> <!---row end-->
+
+<div class="row">
+
+  <div class="col-sm-12">
+<button class="btn btn-primary" (click)="getmyjsondata()">Load json</button>
+<table class="table  table-bordered">
+
+<tr>
+<th>Name</th>
+<th>Mobile No</th>
+</tr>
+
+<tr *ngFor="let p of alluser">
+<th>No data</th>
+ <!-- <td>{{p.name}}</td>-->
+  <td>{{p.mobile}}
+    <p>gg</p>
+  </td>
+</tr>
+
+</table>
+
+
+
+  </div>
+
+</div>
+
+
+</div> <!---Container end-->
